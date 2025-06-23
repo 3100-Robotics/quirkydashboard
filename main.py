@@ -41,7 +41,7 @@ class Data:
         self.spit = spit
         self.running = True
 
-    def run(self):
+    def run(self): 
         self.thread.start()
 
     def start(self):
@@ -53,7 +53,7 @@ class Data:
             elif self.inst.isConnected() and not cflag:
                 logging.info("NT connected")
                 cflag = True
-                
+
             time.sleep(self.restime)
             self.data = json.loads(self.table.getString("qdbpoints", "{}"))
             self.spit(self.data)
